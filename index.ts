@@ -1,16 +1,16 @@
-interface postGateKeeper {
-  title: string
-  age: number
-  publish: boolean
-}
-const post = {
-  title: "My heading",
-  age: 55,
-  publish: true
-}
-
-const printPost = (postToBePrint: postGateKeeper) => {
-  console.log(`${postToBePrint.title} and the age is ${postToBePrint.age}`)
+class Car {
+  color: string
+  year: number
+  constructor(color: string, year: number) {
+    this.color = color
+    this.year = year
+  }
+  drive() {
+    console.log("vroom")
+  }
 }
 
-printPost(post)
+//instance of car
+const myCar = new Car("red color", 2010)
+myCar.drive()
+console.log(myCar.color, myCar.year)
