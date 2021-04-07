@@ -1,21 +1,19 @@
-//Generic class
-
-class valueHolder<typeOf> {
-  value: typeOf
-
-  constructor(value: typeOf) {
-    this.value = value
-  }
+//Generic function
+const valueWrapper = <T>(value: T): T[] => {
+  return [value]
 }
 
-const numberHolder = new valueHolder<number>(10)
+const numberWrapper = valueWrapper<number>(10)
+console.log(numberWrapper)
+//Or we can write, here TS automatically understand the type is number
+const numberWrapper1 = valueWrapper(20)
+console.log(numberWrapper1)
 
-console.log(numberHolder.value)
+//for string
 
-const stringHolder = new valueHolder<string>("Hello")
+const stringWrapper = valueWrapper<string>("Hello")
+console.log(stringWrapper)
+//Or we can write, here TS automatically understand the type is string
 
-console.log(stringHolder.value)
-
-const booleanHolder = new valueHolder<boolean>(true)
-
-console.log(booleanHolder.value)
+const stringWrapper1 = valueWrapper("Hello two")
+console.log(stringWrapper1)
