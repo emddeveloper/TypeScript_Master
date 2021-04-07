@@ -1,26 +1,21 @@
-//interface and class
+//Generic class
 
-interface drievable {
-  speed: number
-  drive(): string
-}
+class valueHolder<typeOf> {
+  value: typeOf
 
-class Car implements drievable {
-  speed = 0
-  constructor(speed: number) {
-    this.speed = speed
-  }
-  drive() {
-    return `The speed is ${this.speed}`
+  constructor(value: typeOf) {
+    this.value = value
   }
 }
 
-//creating instance of Car
+const numberHolder = new valueHolder<number>(10)
 
-const myCar = new Car(100)
+console.log(numberHolder.value)
 
-const startDrive = (vehicle: drievable) => {
-  console.log(vehicle.drive())
-}
+const stringHolder = new valueHolder<string>("Hello")
 
-startDrive(myCar)
+console.log(stringHolder.value)
+
+const booleanHolder = new valueHolder<boolean>(true)
+
+console.log(booleanHolder.value)
